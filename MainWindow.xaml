@@ -1,0 +1,33 @@
+﻿<Window x:Class="MicrocontrollerProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MicrocontrollerProject"
+        mc:Ignorable="d"
+        Title="Programator" Height="460" Width="633">
+    <Grid>
+        <DataGrid AutoGenerateColumns="False" 
+          Height="362" 
+          HorizontalAlignment="Left" 
+          Name="CalyKod" 
+          VerticalAlignment="Top" 
+          Width="249" Margin="10,49,0,0" IsReadOnly="True" CanUserSortColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserReorderColumns="False">
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="Numer" Binding="{Binding Path=Nr}" MinWidth="20" />
+                <DataGridTextColumn Header="Mnemonik" Binding="{Binding Path=Mn}" MinWidth="80" />
+                <DataGridTextColumn Header="Arg1" Binding="{Binding Path=A1}" MinWidth="60" />
+                <DataGridTextColumn Header="Arg2" Binding="{Binding Path=A2}" MinWidth="60" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Name="Zaprogramuj" Content="Zaprogramuj&#xa;mikrokontroler"  Margin="507,50,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="38" Width="100" Click="Zaprogramuj_Click"/>
+        <Button Name="Dodaj" Content="+" HorizontalAlignment="Left" Margin="332,179,0,0" VerticalAlignment="Top" Height="37" Width="38" FontSize="24" FontWeight="Bold" Click="Dodaj_Click"/>
+        <Button Name="Usun" Content="-" HorizontalAlignment="Left" Margin="520,179,0,0" VerticalAlignment="Top" Height="36" Width="39" FontSize="24" FontWeight="Bold" Click="Usun_Click"/>
+        <Button Name="Zapisz" Content="Zapisz do pliku" HorizontalAlignment="Left" Margin="400,49,0,0" VerticalAlignment="Top" Height="40" Width="90" Click="Zapisz_Click"/>
+        <Button Name="Wczytaj" Content="Wczytaj z pliku" HorizontalAlignment="Left" Margin="280,49,0,0" VerticalAlignment="Top" Height="40" Width="90" Click="Wczytaj_Click"/>
+        <ComboBox x:Name="Arg1" HorizontalAlignment="Left" Margin="400,126,0,0" VerticalAlignment="Top" Width="90" Height="28"/>
+        <ComboBox x:Name="Arg2" HorizontalAlignment="Left" Margin="520,126,0,0" VerticalAlignment="Top" Width="90" Height="28"/>
+        <ComboBox Name="Mnemonik" HorizontalAlignment="Left" Margin="280,126,0,0" VerticalAlignment="Top" Width="90" Height="28" FontSize="16" SelectionChanged="Mnemonik_SelectionChanged"/>
+        <Button Name="Zamknij" Content="Zamknij" HorizontalAlignment="Left" Margin="400,369,0,0" VerticalAlignment="Top" Height="42" Width="90" Click="Zamknij_Click"/>
+    </Grid>
+</Window>
