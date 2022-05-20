@@ -1,0 +1,27 @@
+0	mov	AL	3
+1	int	21	
+2	cmp	BL	0
+3	je	1	
+4	mov	AL	1
+5	int	21	
+7	mov	CL	BL
+8	mov	DL	48
+9	sub	CL	DL
+10	mov	DL	CL
+10	mov	AL	2
+11	mov	BL	13
+12	int	21	
+13	cmp	CL	0
+14	je	27	
+15	mov	BL	36
+16	mov	AL	2
+17	int	21	
+18	dec	DL	
+19	cmp	DL	0
+20	je	22	
+21	jmp	15	
+22	dec	CL	
+23	mov	DL	CL
+24	cmp	CL	0
+25	je	27	
+26	jmp	10	
